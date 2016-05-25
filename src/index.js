@@ -52,7 +52,7 @@ function decideWrap(original, args, agent, methodName) {
     return original.apply(this, args)
 }
 
-function wrap(agent, mysql = require('mysql')) {
+function wrap(agent, mysql) {
     let _createConnection = mysql.createConnection
     let _createPool = mysql.createPool
 
@@ -91,6 +91,7 @@ function unwrap() {
 }
 
 module.exports = {
+    target: 'mysql',
     wrap,
     unwrap,
 }
