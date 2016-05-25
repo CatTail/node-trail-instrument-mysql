@@ -2,7 +2,7 @@
   "name": "trail-instrument-mysql",
   "description": "Instrument mysql for trail",
   "repository": "CatTail/node-trail-instrument-mysql",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [
