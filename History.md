@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/cattail/node-trail-instrument-mysql/compare/v0.1.0...v1.0.0) (2016-05-25)
+# [1.0.0](https://github.com/open-trail/node-trail-instrument-mysql/compare/v0.1.0...v1.0.0) (2016-05-25)
 
 
 
@@ -9,7 +9,7 @@
 
 ### Features
 
-* instrument mysql Connection.query and Pool.query ([855c72b](https://github.com/cattail/node-trail-instrument-mysql/commit/855c72b))
+* instrument mysql Connection.query and Pool.query ([855c72b](https://github.com/open-trail/node-trail-instrument-mysql/commit/855c72b))
 
 
 

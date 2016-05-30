@@ -3,6 +3,7 @@
 import {expect} from 'chai'
 import mysql from 'mysql'
 import agent from 'trail-agent'
+
 import wrapper from '.'
 
 describe('mysql e2e', () => {

@@ -2,26 +2,24 @@
 
 import shimmer from 'trail-shimmer'
 
-let CONNECTION_OPERATIONS = [
+const CONNECTION_OPERATIONS = [
     'connect',
     'query',
     'end',
 ]
 
-let POOL_OPERATIONS = [
+const POOL_OPERATIONS = [
     'getConnection',
     'query',
     'destroy',
 ]
 
-// TODO: handle promise
 function decideWrap(original, args, agent, methodName) {
     if (methodName === 'query') {
         let span = agent.fork(args[0])
         span.setTag('protocol', 'mysql')
         let connectionConfig = this.config.connectionConfig ?
-            this.config.connectionConfig :
-            this.config
+            this.config.connectionConfig : this.config
         if (connectionConfig.host) {
             span.setTag('host', connectionConfig.host)
         }
@@ -36,8 +34,8 @@ function decideWrap(original, args, agent, methodName) {
                 return originalCallback.apply(this, arguments)
             }
         }
-        let last = args[args.length - 1]
 
+        let last = args[args.length - 1]
         if (last && typeof last === 'function') {
             args[args.length - 1] = wrappedCallback(last)
         } else if (Array.isArray(last) &&
@@ -60,6 +58,7 @@ function wrap(agent, mysql) {
         let Connection = _createConnection(config)
 
         shimmer.wrap(Connection, 'Connection', CONNECTION_OPERATIONS, wrapQuery)
+
         return Connection
     }
 
