@@ -23,6 +23,9 @@ function decideWrap(original, args, agent, methodName) {
         if (connectionConfig.host) {
             span.setTag('host', connectionConfig.host)
         }
+        if (connectionConfig.port) {
+            span.setTag('port', connectionConfig.port)
+        }
         if (connectionConfig.database) {
             span.setTag('database', connectionConfig.database)
         }

@@ -17,6 +17,7 @@ describe('mysql e2e', () => {
 
     beforeEach(() => {
         records = []
+        agent.setSampler(() => true)
         agent.setRecorder((span) => {
             records.push(span)
         })
